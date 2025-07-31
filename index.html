@@ -260,7 +260,6 @@
       <div class="agenda-logo">
         <img src="https://aiworkshopmediaset.s3.amazonaws.com/mediaset_logo.jpeg" alt="Logo">
       </div>
-      <div class="toggle"><i class="fas fa-circle-plus"></i></div>
     </section>
 
     <section class="agenda-item">
@@ -298,7 +297,6 @@
         <p class="time">15 min</p>
         <p class="agenda-detail">Pausa con caffè e networking.</p>
       </div>
-      <div class="toggle"><i class="fas fa-circle-plus"></i></div>
     </section>
 
     <section class="agenda-item">
@@ -340,7 +338,6 @@
       <div class="agenda-logo">
         <img src="https://aiworkshopmediaset.s3.amazonaws.com/mediaset_logo.jpeg" alt="Fine lavori">
       </div>
-      <div class="toggle"><i class="fas fa-circle-plus"></i></div>
     </section>
   </section>
 
@@ -364,9 +361,11 @@
   <section id="consigli" class="tab-content">
     <section class="agenda-item">
       <div class="agenda-content">
-        <h3>AI Superpowers - Kai-Fu Lee</h3>
+        <h3>L'onda che verrà</h3>
+        <p><em>Mustafa Suleyman, Michael Bhaskar</em></p>
+        <p class="agenda-detail">Uno sguardo a come l'IA e le nuove tecnologie stanno trasformando il futuro.</p>
       </div>
-      <a class="cart-link icon" href="https://www.amazon.it/s?k=AI+Superpowers+Kai-Fu+Lee" target="_blank" aria-label="Acquista su Amazon"><i class="fas fa-cart-shopping"></i></a>
+      <a class="cart-link icon" href="https://www.amazon.it/Londa-che-verr%C3%A0-Mustafa-Suleyman-ebook/dp/B0CXCYJQRL/ref=sr_1_1?adgrpid=161911767569&dib=eyJ2IjoiMSJ9.UwKU8fdr6yhNqRTfhKHmo3IAvaqepXx96n9tb8Vul9ciiITffFxmNpV7bX9yDCRzF6XXHoim0EwcT6JBq_rGYW1chLhKubSy0-DzBIla0kxiRZCShBRQECC3zxXHrdvTeBiVRl7zA-AYDy7BhP6LOg.O8qmzNH-3FVRldewOpkhwR5HwAL3FRbwgTNWMtI64lU&dib_tag=se&hvadid=710724147533&hvdev=c&hvexpln=0&hvlocphy=9198639&hvnetw=g&hvocijid=10620017132028927798--&hvqmt=e&hvrand=10620017132028927798&hvtargid=kwd-2301754090518&hydadcr=28430_2518840&keywords=l%27onda+che+verr%C3%A0&mcid=ce17461b3b6630bd95c150e3cadb90fc&qid=1753978372&sr=8-1" target="_blank" aria-label="Acquista su Amazon"><i class="fas fa-cart-shopping"></i></a>
     </section>
     <section class="agenda-item">
       <div class="agenda-content">
@@ -395,12 +394,14 @@
     item.addEventListener('click', function() {
       item.classList.toggle('open');
       var icon = item.querySelector('.toggle i');
-      if (item.classList.contains('open')) {
-        icon.classList.remove('fa-circle-plus');
-        icon.classList.add('fa-circle-minus');
-      } else {
-        icon.classList.remove('fa-circle-minus');
-        icon.classList.add('fa-circle-plus');
+      if (icon) {
+        if (item.classList.contains('open')) {
+          icon.classList.remove('fa-circle-plus');
+          icon.classList.add('fa-circle-minus');
+        } else {
+          icon.classList.remove('fa-circle-minus');
+          icon.classList.add('fa-circle-plus');
+        }
       }
     });
   });
