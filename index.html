@@ -104,7 +104,6 @@
 
     .agenda-item {
       display: flex;
-      justify-content: space-between;
       align-items: center;
       gap: 1.5rem;
       margin-bottom: 1.75rem;
@@ -163,9 +162,22 @@
       display: block;
     }
 
+    .toggle {
+      margin-left: auto;
+      font-size: 1.2rem;
+      color: var(--primary);
+      transition: transform .3s ease;
+    }
+
+    .agenda-item.open .toggle {
+      transform: rotate(90deg);
+    }
+
     .cart-link {
       color: var(--primary);
       text-decoration: none;
+      margin-left: auto;
+      font-size: 1.4rem;
     }
 
     .agenda-logo img {
@@ -248,6 +260,7 @@
       <div class="agenda-logo">
         <img src="https://aiworkshopmediaset.s3.amazonaws.com/mediaset_logo.jpeg" alt="Logo">
       </div>
+      <div class="toggle"><i class="fas fa-chevron-right"></i></div>
     </section>
 
     <section class="agenda-item">
@@ -261,6 +274,7 @@
       <div class="agenda-logo">
         <img src="https://aiworkshopmediaset.s3.amazonaws.com/BCG_Corporate_Logo.png" alt="BCG">
       </div>
+      <div class="toggle"><i class="fas fa-chevron-right"></i></div>
     </section>
 
     <section class="agenda-item">
@@ -274,6 +288,7 @@
       <div class="agenda-logo">
         <img src="https://aiworkshopmediaset.s3.amazonaws.com/pwc.png" alt="PwC">
       </div>
+      <div class="toggle"><i class="fas fa-chevron-right"></i></div>
     </section>
 
     <section class="agenda-item">
@@ -283,6 +298,7 @@
         <p class="time">15 min</p>
         <p class="agenda-detail">Pausa con caffè e networking.</p>
       </div>
+      <div class="toggle"><i class="fas fa-chevron-right"></i></div>
     </section>
 
     <section class="agenda-item">
@@ -296,6 +312,7 @@
       <div class="agenda-logo">
         <img src="https://aiworkshopmediaset.s3.amazonaws.com/mediaset_logo.jpeg" alt="MedIAset">
       </div>
+      <div class="toggle"><i class="fas fa-chevron-right"></i></div>
     </section>
 
     <section class="agenda-item">
@@ -309,6 +326,7 @@
       <div class="agenda-logo">
         <img src="https://aiworkshopmediaset.s3.amazonaws.com/bcgreply.png" alt="BCG Reply">
       </div>
+      <div class="toggle"><i class="fas fa-chevron-right"></i></div>
     </section>
 
     <section class="agenda-item">
@@ -322,6 +340,7 @@
       <div class="agenda-logo">
         <img src="https://aiworkshopmediaset.s3.amazonaws.com/mediaset_logo.jpeg" alt="Fine lavori">
       </div>
+      <div class="toggle"><i class="fas fa-chevron-right"></i></div>
     </section>
   </section>
 
@@ -344,16 +363,16 @@
 
   <section id="consigli" class="tab-content">
     <section class="agenda-item">
-      <a class="cart-link icon" href="https://www.amazon.it/s?k=AI+Superpowers+Kai-Fu+Lee" target="_blank"><i class="fas fa-cart-shopping"></i></a>
       <div class="agenda-content">
         <h3>AI Superpowers - Kai-Fu Lee</h3>
       </div>
+      <a class="cart-link icon" href="https://www.amazon.it/s?k=AI+Superpowers+Kai-Fu+Lee" target="_blank" aria-label="Acquista su Amazon"><i class="fas fa-cart-shopping"></i></a>
     </section>
     <section class="agenda-item">
-      <a class="cart-link icon" href="https://www.amazon.it/s?k=Human+Compatible+Stuart+Russell" target="_blank"><i class="fas fa-cart-shopping"></i></a>
       <div class="agenda-content">
         <h3>Human Compatible - Stuart Russell</h3>
       </div>
+      <a class="cart-link icon" href="https://www.amazon.it/s?k=Human+Compatible+Stuart+Russell" target="_blank" aria-label="Acquista su Amazon"><i class="fas fa-cart-shopping"></i></a>
     </section>
   </section>
 </main>
