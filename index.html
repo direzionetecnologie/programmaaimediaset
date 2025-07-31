@@ -81,6 +81,11 @@
       font-weight: 600;
       background: var(--accent);
       border: none;
+      border-right: 2px solid var(--light);
+    }
+
+    .tab:last-child {
+      border-right: none;
     }
 
     .tab.active {
@@ -164,13 +169,8 @@
 
     .toggle {
       margin-left: auto;
-      font-size: 1.2rem;
+      font-size: 1.5rem;
       color: var(--primary);
-      transition: transform .3s ease;
-    }
-
-    .agenda-item.open .toggle {
-      transform: rotate(90deg);
     }
 
     .cart-link {
@@ -260,7 +260,7 @@
       <div class="agenda-logo">
         <img src="https://aiworkshopmediaset.s3.amazonaws.com/mediaset_logo.jpeg" alt="Logo">
       </div>
-      <div class="toggle"><i class="fas fa-chevron-right"></i></div>
+      <div class="toggle"><i class="fas fa-circle-plus"></i></div>
     </section>
 
     <section class="agenda-item">
@@ -274,7 +274,7 @@
       <div class="agenda-logo">
         <img src="https://aiworkshopmediaset.s3.amazonaws.com/BCG_Corporate_Logo.png" alt="BCG">
       </div>
-      <div class="toggle"><i class="fas fa-chevron-right"></i></div>
+      <div class="toggle"><i class="fas fa-circle-plus"></i></div>
     </section>
 
     <section class="agenda-item">
@@ -288,7 +288,7 @@
       <div class="agenda-logo">
         <img src="https://aiworkshopmediaset.s3.amazonaws.com/pwc.png" alt="PwC">
       </div>
-      <div class="toggle"><i class="fas fa-chevron-right"></i></div>
+      <div class="toggle"><i class="fas fa-circle-plus"></i></div>
     </section>
 
     <section class="agenda-item">
@@ -298,7 +298,7 @@
         <p class="time">15 min</p>
         <p class="agenda-detail">Pausa con caffè e networking.</p>
       </div>
-      <div class="toggle"><i class="fas fa-chevron-right"></i></div>
+      <div class="toggle"><i class="fas fa-circle-plus"></i></div>
     </section>
 
     <section class="agenda-item">
@@ -312,7 +312,7 @@
       <div class="agenda-logo">
         <img src="https://aiworkshopmediaset.s3.amazonaws.com/mediaset_logo.jpeg" alt="MedIAset">
       </div>
-      <div class="toggle"><i class="fas fa-chevron-right"></i></div>
+      <div class="toggle"><i class="fas fa-circle-plus"></i></div>
     </section>
 
     <section class="agenda-item">
@@ -326,7 +326,7 @@
       <div class="agenda-logo">
         <img src="https://aiworkshopmediaset.s3.amazonaws.com/bcgreply.png" alt="BCG Reply">
       </div>
-      <div class="toggle"><i class="fas fa-chevron-right"></i></div>
+      <div class="toggle"><i class="fas fa-circle-plus"></i></div>
     </section>
 
     <section class="agenda-item">
@@ -340,7 +340,7 @@
       <div class="agenda-logo">
         <img src="https://aiworkshopmediaset.s3.amazonaws.com/mediaset_logo.jpeg" alt="Fine lavori">
       </div>
-      <div class="toggle"><i class="fas fa-chevron-right"></i></div>
+      <div class="toggle"><i class="fas fa-circle-plus"></i></div>
     </section>
   </section>
 
@@ -394,6 +394,14 @@
   document.querySelectorAll('#agenda .agenda-item').forEach(function(item) {
     item.addEventListener('click', function() {
       item.classList.toggle('open');
+      var icon = item.querySelector('.toggle i');
+      if (item.classList.contains('open')) {
+        icon.classList.remove('fa-circle-plus');
+        icon.classList.add('fa-circle-minus');
+      } else {
+        icon.classList.remove('fa-circle-minus');
+        icon.classList.add('fa-circle-plus');
+      }
     });
   });
 </script>
