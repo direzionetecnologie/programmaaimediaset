@@ -65,10 +65,41 @@
       color: var(--primary);
     }
 
+    .tabs {
+      display: flex;
+      border-bottom: 3px solid var(--primary);
+      background: var(--accent);
+    }
+
+    .tab {
+      flex: 1;
+      padding: 1rem;
+      text-align: center;
+      cursor: pointer;
+      color: var(--light);
+      font-size: 1.1rem;
+      font-weight: 600;
+      background: var(--accent);
+      border: none;
+    }
+
+    .tab.active {
+      background: var(--primary);
+      color: var(--dark);
+    }
+
     main {
       max-width: 900px;
       margin: 0 auto;
       padding: 2rem 1rem;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
     }
 
     .agenda-item {
@@ -182,93 +213,141 @@
   <p>Sala Camana, 9:45 - 13:00</p>
 </header>
 
+<nav class="tabs">
+  <button class="tab active" data-tab="agenda">Agenda</button>
+  <button class="tab" data-tab="guide">Guide all'uso dell'IA</button>
+  <button class="tab" data-tab="consigli">Consigli di lettura</button>
+</nav>
+
 <main>
+  <section id="agenda" class="tab-content active">
+    <section class="agenda-item">
+      <div class="icon"><i class="fas fa-handshake"></i></div>
+      <div class="agenda-content">
+        <h3>Welcome</h3>
+        <p class="time">15 min</p>
+      </div>
+      <div class="agenda-logo">
+        <img src="https://aiworkshopmediaset.s3.amazonaws.com/mediaset_logo.jpeg" alt="Logo">
+      </div>
+    </section>
 
-  <section class="agenda-item">
-    <div class="icon"><i class="fas fa-handshake"></i></div>
-    <div class="agenda-content">
-      <h3>Welcome</h3>
-      <p class="time">15 min</p>
-    </div>
-    <div class="agenda-logo">
-      <img src="https://aiworkshopmediaset.s3.amazonaws.com/mediaset_logo.jpeg" alt="Logo">
-    </div>
+    <section class="agenda-item">
+      <div class="icon"><i class="fas fa-rocket"></i></div>
+      <div class="agenda-content">
+        <h3>AI Generativa, dalle chat agli agenti</h3>
+        <p class="time">40 min</p>
+        <p><strong>Speaker:</strong> Antonio Faraldi</p>
+      </div>
+      <div class="agenda-logo">
+        <img src="https://aiworkshopmediaset.s3.amazonaws.com/BCG_Corporate_Logo.png" alt="BCG">
+      </div>
+    </section>
+
+    <section class="agenda-item">
+      <div class="icon"><i class="fas fa-scale-balanced"></i></div>
+      <div class="agenda-content">
+        <h3>AI Act e primi elementi di “guard-railing” per l’Azienda</h3>
+        <p class="time">30 min</p>
+        <p><strong>Speaker:</strong> PWC</p>
+      </div>
+      <div class="agenda-logo">
+        <img src="https://aiworkshopmediaset.s3.amazonaws.com/pwc.png" alt="PwC">
+      </div>
+    </section>
+
+    <section class="agenda-item">
+      <div class="icon"><i class="fas fa-mug-saucer"></i></div>
+      <div class="agenda-content">
+        <h3>Coffee Break</h3>
+        <p class="time">15 min</p>
+      </div>
+    </section>
+
+    <section class="agenda-item">
+      <div class="icon"><i class="fas fa-lightbulb"></i></div>
+      <div class="agenda-content">
+        <h3>Programma <b>MedIAset</b></h3>
+        <p class="time">30 min</p>
+        <p><strong>Speaker:</strong> Marcello Galli, Luca Poloni</p>
+      </div>
+      <div class="agenda-logo">
+        <img src="https://aiworkshopmediaset.s3.amazonaws.com/mediaset_logo.jpeg" alt="MedIAset">
+      </div>
+    </section>
+
+    <section class="agenda-item">
+      <div class="icon"><i class="fas fa-wand-magic"></i></div>
+      <div class="agenda-content">
+        <h3>Prompting Tips & Tricks</h3>
+        <p class="time">50 min</p>
+        <p><strong>Speaker:</strong> Team BCG-Reply</p>
+      </div>
+      <div class="agenda-logo">
+        <img src="https://aiworkshopmediaset.s3.amazonaws.com/bcgreply.png" alt="BCG Reply">
+      </div>
+    </section>
+
+    <section class="agenda-item">
+      <div class="icon"><i class="fas fa-flag-checkered"></i></div>
+      <div class="agenda-content">
+        <h3>Fine lavori</h3>
+        <p class="time">10 min</p>
+        <p><strong>Speaker:</strong> Marcello Galli, Luca Poloni</p>
+      </div>
+      <div class="agenda-logo">
+        <img src="https://aiworkshopmediaset.s3.amazonaws.com/mediaset_logo.jpeg" alt="Fine lavori">
+      </div>
+    </section>
   </section>
 
-  <section class="agenda-item">
-    <div class="icon"><i class="fas fa-rocket"></i></div>
-    <div class="agenda-content">
-      <h3>AI Generativa, dalle chat agli agenti</h3>
-      <p class="time">40 min</p>
-      <p><strong>Speaker:</strong> Antonio Faraldi</p>
-    </div>
-    <div class="agenda-logo">
-      <img src="https://aiworkshopmediaset.s3.amazonaws.com/BCG_Corporate_Logo.png" alt="BCG">
-    </div>
+  <section id="guide" class="tab-content">
+    <section class="agenda-item">
+      <div class="icon"><i class="fas fa-book"></i></div>
+      <div class="agenda-content">
+        <h3>Guida all'uso di ChatGPT</h3>
+        <p><a class="download-link" href="https://aiworkshopmediaset.s3.amazonaws.com/Guida chatgpt 31.7  .pdf" download>Scarica PDF</a></p>
+      </div>
+    </section>
+    <section class="agenda-item">
+      <div class="icon"><i class="fas fa-book"></i></div>
+      <div class="agenda-content">
+        <h3>Guida “Prompting efficace”</h3>
+        <p><a class="download-link" href="https://aiworkshopmediaset.s3.amazonaws.com/esploriamo_il_mondo_dei_prompt.pdf" download>Scarica PDF</a></p>
+      </div>
+    </section>
   </section>
 
-  <section class="agenda-item">
-    <div class="icon"><i class="fas fa-scale-balanced"></i></div>
-    <div class="agenda-content">
-      <h3>AI Act e primi elementi di “guard-railing” per l’Azienda</h3>
-      <p class="time">30 min</p>
-      <p><strong>Speaker:</strong> PWC</p>
-    </div>
-    <div class="agenda-logo">
-      <img src="https://aiworkshopmediaset.s3.amazonaws.com/pwc.png" alt="PwC">
-    </div>
+  <section id="consigli" class="tab-content">
+    <section class="agenda-item">
+      <div class="icon"><i class="fas fa-book-open"></i></div>
+      <div class="agenda-content">
+        <h3>AI Superpowers - Kai-Fu Lee</h3>
+      </div>
+    </section>
+    <section class="agenda-item">
+      <div class="icon"><i class="fas fa-book-open"></i></div>
+      <div class="agenda-content">
+        <h3>Human Compatible - Stuart Russell</h3>
+      </div>
+    </section>
   </section>
-
-  <section class="agenda-item">
-    <div class="icon"><i class="fas fa-mug-saucer"></i></div>
-    <div class="agenda-content">
-      <h3>Coffee Break</h3>
-      <p class="time">15 min</p>
-    </div>
-  </section>
-
-  <section class="agenda-item">
-    <div class="icon"><i class="fas fa-lightbulb"></i></div>
-    <div class="agenda-content">
-      <h3>Programma <b>MedIAset</b></h3>
-      <p class="time">30 min</p>
-      <p><strong>Speaker:</strong> Marcello Galli, Luca Poloni</p>
-    </div>
-    <div class="agenda-logo">
-      <img src="https://aiworkshopmediaset.s3.amazonaws.com/mediaset_logo.jpeg" alt="MedIAset">
-    </div>
-  </section>
-
-  <section class="agenda-item">
-    <div class="icon"><i class="fas fa-wand-magic"></i></div>
-    <div class="agenda-content">
-      <h3>Prompting Tips & Tricks</h3>
-      <p class="time">50 min</p>
-      <p><strong>Speaker:</strong> Team BCG-Reply</p>
-    </div>
-    <div class="agenda-logo">
-      <img src="https://aiworkshopmediaset.s3.amazonaws.com/bcgreply.png" alt="BCG Reply">
-    </div>
-  </section>
-
-  <section class="agenda-item">
-    <div class="icon"><i class="fas fa-flag-checkered"></i></div>
-    <div class="agenda-content">
-      <h3>Fine lavori</h3>
-      <p class="time">10 min</p>
-      <p><strong>Speaker:</strong> Marcello Galli, Luca Poloni</p>
-    </div>
-    <div class="agenda-logo">
-      <img src="https://aiworkshopmediaset.s3.amazonaws.com/mediaset_logo.jpeg" alt="Fine lavori">
-    </div>
-  </section>
-
 </main>
+
 <footer>
-  <a href="https://aiworkshopmediaset.s3.amazonaws.com/Guida chatgpt 31.7  .pdf" class="download-link" download>Scarica la guida all'uso di ChatGPT</a><br>
-  <a href="https://aiworkshopmediaset.s3.amazonaws.com/esploriamo_il_mondo_dei_prompt.pdf" class="download-link" download>Scarica la guida “Prompting efficace”</a><br>
   &copy; 2025 Mediaset – Direzione Tecnologie<br>
 </footer>
+
+<script>
+  document.querySelectorAll('.tab').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.tab').forEach(function(b){ b.classList.remove('active'); });
+      document.querySelectorAll('.tab-content').forEach(function(tc){ tc.classList.remove('active'); });
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.tab).classList.add('active');
+    });
+  });
+</script>
 
 </body>
 </html>
