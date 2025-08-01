@@ -81,6 +81,11 @@
       font-weight: 600;
       background: var(--accent);
       border: none;
+      border-right: 2px solid var(--light);
+    }
+
+    .tab:last-child {
+      border-right: none;
     }
 
     .tab.active {
@@ -104,7 +109,6 @@
 
     .agenda-item {
       display: flex;
-      justify-content: space-between;
       align-items: center;
       gap: 1.5rem;
       margin-bottom: 1.75rem;
@@ -113,6 +117,7 @@
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, .4);
       transition: transform .3s ease, box-shadow .3s ease;
+      cursor: pointer;
     }
 
     .agenda-item:hover {
@@ -149,6 +154,30 @@
 
     .agenda-content p {
       margin: 0.2rem 0;
+    }
+
+    .agenda-detail {
+      display: none;
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+      color: #ccc;
+    }
+
+    .agenda-item.open .agenda-detail {
+      display: block;
+    }
+
+    .toggle {
+      margin-left: auto;
+      font-size: 1.5rem;
+      color: var(--primary);
+    }
+
+    .cart-link {
+      color: var(--primary);
+      text-decoration: none;
+      margin-left: auto;
+      font-size: 1.4rem;
     }
 
     .agenda-logo img {
@@ -202,6 +231,14 @@
     .download-link:hover {
       text-decoration: underline;
     }
+
+    .reading-intro {
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin: 1.5rem 0;
+      color: var(--primary);
+    }
   </style>
 </head>
 <body>
@@ -216,7 +253,6 @@
 <nav class="tabs">
   <button class="tab active" data-tab="agenda">Agenda</button>
   <button class="tab" data-tab="guide">Guide all'uso dell'IA</button>
-  <button class="tab" data-tab="consigli">Consigli di lettura</button>
 </nav>
 
 <main>
@@ -226,6 +262,7 @@
       <div class="agenda-content">
         <h3>Welcome</h3>
         <p class="time">15 min</p>
+        <p class="agenda-detail">Introduzione e saluti iniziali.</p>
       </div>
       <div class="agenda-logo">
         <img src="https://aiworkshopmediaset.s3.amazonaws.com/mediaset_logo.jpeg" alt="Logo">
@@ -238,10 +275,12 @@
         <h3>AI Generativa, dalle chat agli agenti</h3>
         <p class="time">40 min</p>
         <p><strong>Speaker:</strong> Antonio Faraldi</p>
+        <p class="agenda-detail">Boston Consulting Group ci guiderà in un’introduzione sull’evoluzione dell’intelligenza artificiale generativa: si partirà dalle chatbot testuali per arrivare ai nuovi “agenti AI”, sistemi capaci di pianificare, eseguire task complessi e interagire in autonomia con ambienti digitali. Verranno mostrati casi d’uso concreti e scenari applicativi rilevanti per i media e le aziende.</p>
       </div>
       <div class="agenda-logo">
         <img src="https://aiworkshopmediaset.s3.amazonaws.com/BCG_Corporate_Logo.png" alt="BCG">
       </div>
+      <div class="toggle"><i class="fas fa-circle-plus"></i></div>
     </section>
 
     <section class="agenda-item">
@@ -250,10 +289,12 @@
         <h3>AI Act e primi elementi di “guard-railing” per l’Azienda</h3>
         <p class="time">30 min</p>
         <p><strong>Speaker:</strong> PWC</p>
+        <p class="agenda-detail">PWC porterà evidenza sugli effetti operativi derivanti dal nuovo regolamento europeo sull’intelligenza artificiale (AI Act), con focus sugli impatti organizzativi e sulle misure iniziali che le aziende, in particolare quelle del settore media e broadcasting, possono adottare per garantire un uso responsabile e conforme delle tecnologie AI.</p>
       </div>
       <div class="agenda-logo">
         <img src="https://aiworkshopmediaset.s3.amazonaws.com/pwc.png" alt="PwC">
       </div>
+      <div class="toggle"><i class="fas fa-circle-plus"></i></div>
     </section>
 
     <section class="agenda-item">
@@ -261,6 +302,7 @@
       <div class="agenda-content">
         <h3>Coffee Break</h3>
         <p class="time">15 min</p>
+        <p class="agenda-detail">Pausa con caffè e networking.</p>
       </div>
     </section>
 
@@ -270,10 +312,12 @@
         <h3>Programma <b>MedIAset</b></h3>
         <p class="time">30 min</p>
         <p><strong>Speaker:</strong> Marcello Galli, Luca Poloni</p>
+        <p class="agenda-detail">Marcello e Luca descriveranno il programma aziendale di esplorazione e sperimentazione dell'intelligenza artificiale generativa. In particolare si soffermeranno sui tre ambiti principali del programma: identificazione dei principi e delle linee guida aziendali di utilizzo della GEN-AI, sperimentazione di strumenti a supporto della produttività individuale, Identificazione e implementazioni di use case verticali per la nostra industry</p>
       </div>
       <div class="agenda-logo">
         <img src="https://aiworkshopmediaset.s3.amazonaws.com/mediaset_logo.jpeg" alt="MedIAset">
       </div>
+      <div class="toggle"><i class="fas fa-circle-plus"></i></div>
     </section>
 
     <section class="agenda-item">
@@ -282,10 +326,12 @@
         <h3>Prompting Tips & Tricks</h3>
         <p class="time">50 min</p>
         <p><strong>Speaker:</strong> Team BCG-Reply</p>
+        <p class="agenda-detail">Una sessione pratica guidata per sperimentare dal vivo l’utilizzo dei modelli generativi. I partecipanti potranno provare in prima persona tecniche di prompting su diversi scenari (scrittura, sintesi, ricerca, automazione), confrontare approcci, ricevere feedback immediato e scoprire come migliorare l’efficacia delle richieste ai modelli. L’obiettivo è rendere l’AI uno strumento quotidiano, concreto e potenziato dalla pratica.</p>
       </div>
       <div class="agenda-logo">
         <img src="https://aiworkshopmediaset.s3.amazonaws.com/bcgreply.png" alt="BCG Reply">
       </div>
+      <div class="toggle"><i class="fas fa-circle-plus"></i></div>
     </section>
 
     <section class="agenda-item">
@@ -294,6 +340,7 @@
         <h3>Fine lavori</h3>
         <p class="time">10 min</p>
         <p><strong>Speaker:</strong> Marcello Galli, Luca Poloni</p>
+        <p class="agenda-detail">Conclusione della giornata e prossimi passi.</p>
       </div>
       <div class="agenda-logo">
         <img src="https://aiworkshopmediaset.s3.amazonaws.com/mediaset_logo.jpeg" alt="Fine lavori">
@@ -305,30 +352,22 @@
     <section class="agenda-item">
       <div class="icon"><i class="fas fa-book"></i></div>
       <div class="agenda-content">
-        <h3>Guida all'uso di ChatGPT</h3>
-        <p><a class="download-link" href="https://aiworkshopmediaset.s3.amazonaws.com/Guida chatgpt 31.7  .pdf" download>Scarica PDF</a></p>
+        <h3>Guida al primo accesso a ChatGPT - Pc e mobile</h3>
+        <p><a class="download-link" href="https://aiworkshopmediaset.s3.amazonaws.com/guida primo accesso ChatGPT - PC e Mobile.pdf" download>Scarica PDF</a></p>
       </div>
     </section>
     <section class="agenda-item">
       <div class="icon"><i class="fas fa-book"></i></div>
       <div class="agenda-content">
-        <h3>Guida “Prompting efficace”</h3>
+        <h3>Guida all'uso di ChatGPT</h3>
+        <p><a class="download-link" href="https://aiworkshopmediaset.s3.amazonaws.com/Guida utilizzo principali funzionalità ChatGPT 31.7.pdf" download>Scarica PDF</a></p>
+      </div>
+    </section>
+    <section class="agenda-item">
+      <div class="icon"><i class="fas fa-book"></i></div>
+      <div class="agenda-content">
+        <h3>Guida al Prompting efficace</h3>
         <p><a class="download-link" href="https://aiworkshopmediaset.s3.amazonaws.com/esploriamo_il_mondo_dei_prompt.pdf" download>Scarica PDF</a></p>
-      </div>
-    </section>
-  </section>
-
-  <section id="consigli" class="tab-content">
-    <section class="agenda-item">
-      <div class="icon"><i class="fas fa-book-open"></i></div>
-      <div class="agenda-content">
-        <h3>AI Superpowers - Kai-Fu Lee</h3>
-      </div>
-    </section>
-    <section class="agenda-item">
-      <div class="icon"><i class="fas fa-book-open"></i></div>
-      <div class="agenda-content">
-        <h3>Human Compatible - Stuart Russell</h3>
       </div>
     </section>
   </section>
@@ -345,6 +384,22 @@
       document.querySelectorAll('.tab-content').forEach(function(tc){ tc.classList.remove('active'); });
       btn.classList.add('active');
       document.getElementById(btn.dataset.tab).classList.add('active');
+    });
+  });
+
+  document.querySelectorAll('#agenda .agenda-item').forEach(function(item) {
+    item.addEventListener('click', function() {
+      item.classList.toggle('open');
+      var icon = item.querySelector('.toggle i');
+      if (icon) {
+        if (item.classList.contains('open')) {
+          icon.classList.remove('fa-circle-plus');
+          icon.classList.add('fa-circle-minus');
+        } else {
+          icon.classList.remove('fa-circle-minus');
+          icon.classList.add('fa-circle-plus');
+        }
+      }
     });
   });
 </script>
