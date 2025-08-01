@@ -167,6 +167,10 @@
       display: block;
     }
 
+    #libri .agenda-detail {
+      display: block;
+    }
+
     .toggle {
       margin-left: auto;
       font-size: 1.5rem;
@@ -186,6 +190,14 @@
       border-radius: 50%;
       object-fit: cover;
       border: 2px solid var(--primary);
+    }
+
+    .book-cover {
+      width: 72px;
+      height: auto;
+      border-radius: 4px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+      flex-shrink: 0;
     }
 
     @media (max-width: 640px) {
@@ -239,6 +251,62 @@
       margin: 1.5rem 0;
       color: var(--primary);
     }
+
+    .inner-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .inner-tab {
+      padding: 0.5rem 1.2rem;
+      border-radius: 999px;
+      border: 2px solid var(--primary);
+      background: none;
+      color: var(--light);
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .inner-tab.active {
+      background: var(--primary);
+      color: var(--dark);
+    }
+
+    .inner-tab-content {
+      display: none;
+    }
+
+    .inner-tab-content.active {
+      display: block;
+    }
+
+    .coming-soon {
+      text-align: center;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+
+    .video-box {
+      position: relative;
+      padding-top: 56.25%;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+
+    .video-box iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
   </style>
 </head>
 <body>
@@ -253,6 +321,7 @@
 <nav class="tabs">
   <button class="tab active" data-tab="agenda">Agenda</button>
   <button class="tab" data-tab="guide">Guide all'uso dell'IA</button>
+  <button class="tab" data-tab="consigli">Vuoi approfondire?</button>
 </nav>
 
 <main>
@@ -368,6 +437,96 @@
       </div>
     </section>
   </section>
+
+  <section id="consigli" class="tab-content">
+    <nav class="inner-tabs">
+      <button class="inner-tab active" data-tab="libri">Libri</button>
+      <button class="inner-tab" data-tab="video">Video</button>
+      <button class="inner-tab" data-tab="podcast">Podcast</button>
+    </nav>
+
+    <section id="libri" class="inner-tab-content active">
+      <p class="reading-intro">6 consigli di lettura per questa pausa estiva</p>
+      <section class="agenda-item">
+        <img class="book-cover" src="https://aiworkshopmediaset.s3.eu-west-1.amazonaws.com/eticadellai.jpeg" alt="Etica dell'intelligenza artificiale">
+                <div class="agenda-content">
+          <h3>Etica dell'intelligenza artificiale – Sviluppi, opportunità, sfide</h3>
+          <p><em>Luciano Floridi</em></p>
+          <p class="agenda-detail"><strong>Sinossi:</strong> Floridi sviluppa una solida visione filosofica dell'etica dell'IA, illustrando i sette requisiti per progettare sistemi etici e applicandoli a casi concreti.<br><strong>Perché leggerlo:</strong> offre strumenti pratici per guidare sviluppo e governance di intelligenze artificiali giuste e sostenibili.</p>
+        </div>
+        <a class="cart-link icon" href="https://www.mondadoristore.it/etica-dell-intelligenza-artificiale-sviluppi-opportunita-sfide-libro-luciano-floridi/p/9788832854091" target="_blank" aria-label="Acquista su Amazon"><i class="fas fa-cart-shopping"></i></a>
+      </section>
+      <section class="agenda-item">
+        <img class="book-cover" src="https://aiworkshopmediaset.s3.eu-west-1.amazonaws.com/genesi.webp" alt="Genesi">
+                <div class="agenda-content">
+          <h3>Genesi – Come navigare nell'era dell'intelligenza artificiale</h3>
+          <p><em>Henry A. Kissinger, Eric Schmidt &amp; Craig Mundie</em></p>
+          <p class="agenda-detail"><strong>Sinossi:</strong> Kissinger, Schmidt e Mundie spiegano come l'IA stia ridisegnando potere e identità umana, tra opportunità e rischi esistenziali.<br><strong>Perché leggerlo:</strong> uno sguardo autorevole su come governare una tecnologia capace di trasformare gli equilibri globali.</p>
+        </div>
+        <a class="cart-link icon" href="https://www.mondadoristore.it/genesi-come-navigare-nell-era-dell-intelligenza-artificiale-libro-craig-mundie/p/9788804789772" target="_blank" aria-label="Acquista su Amazon"><i class="fas fa-cart-shopping"></i></a>
+      </section>
+      <section class="agenda-item">
+        <img class="book-cover" src="https://aiworkshopmediaset.s3.eu-west-1.amazonaws.com/la+geopolitica+dell'ia.jpg" alt="Geopolitica dell'intelligenza artificiale">
+                <div class="agenda-content">
+          <h3>Geopolitica dell'intelligenza artificiale</h3>
+          <p><em>Alessandro Aresu</em></p>
+          <p class="agenda-detail"><strong>Sinossi:</strong> analisi della rivoluzione IA e delle nuove rivalità geopolitiche tra Stati Uniti, Cina ed Europa, con particolare attenzione al ruolo delle aziende tecnologiche.<br><strong>Perché leggerlo:</strong> essenziale per capire le reazioni politiche e le lotte di potere determinate dall'IA.</p>
+        </div>
+        <a class="cart-link icon" href="https://www.mondadoristore.it/geopolitica-dell-intelligenza-artificiale-libro-alessandro-aresu/p/9788807174735" target="_blank" aria-label="Acquista su Amazon"><i class="fas fa-cart-shopping"></i></a>
+      </section>
+      <section class="agenda-item">
+        <img class="book-cover" src="https://aiworkshopmediaset.s3.eu-west-1.amazonaws.com/l'onda+che+verra%CC%80.jpg" alt="L'onda che verrà">
+                <div class="agenda-content">
+          <h3>L'onda che verrà</h3>
+          <p><em>Mustafa Suleyman, Michael Bhaskar</em></p>
+          <p class="agenda-detail"><strong>Sinossi:</strong> Suleyman, cofondatore di DeepMind, descrive come l'IA stia riplasmando geopolitica, lavoro ed economia e come la prossima ondata tecnologica porti ricchezza ma anche disordine.<br><strong>Perché leggerlo:</strong> manuale urgente per orientarsi tra opportunità e rischi emergenti scritto da un vero insider.</p>
+        </div>
+        <a class="cart-link icon" href="https://www.mondadoristore.it/l-onda-che-verra-intelligenza-artificiale-e-potere-nel-xxi-secolo-libro-mustafa-suleyman/p/9788811011897" target="_blank" aria-label="Acquista su Amazon"><i class="fas fa-cart-shopping"></i></a>
+      </section>
+      <section class="agenda-item">
+        <img class="book-cover" src="https://aiworkshopmediaset.s3.eu-west-1.amazonaws.com/sovraumano.jpeg" alt="Sovraumano">
+                <div class="agenda-content">
+          <h3>Sovraumano</h3>
+          <p><em>Nello Cristianini</em></p>
+          <p class="agenda-detail"><strong>Sinossi:</strong> Cristianini analizza l'evoluzione dell'IA dall'ANI alla possibile superintelligenza, mostrando dove le macchine superano già l'uomo.<br><strong>Perché leggerlo:</strong> fonde rigore scientifico e riflessione interdisciplinare sui rischi di un'intelligenza artificiale che supera la nostra.</p>
+        </div>
+        <a class="cart-link icon" href="https://www.mondadoristore.it/sovrumano-oltre-i-limiti-della-nostra-intelligenza-libro-nello-cristianini/p/9788815392107" target="_blank" aria-label="Acquista su Amazon"><i class="fas fa-cart-shopping"></i></a>
+      </section>
+      <section class="agenda-item">
+        <img class="book-cover" src="https://aiworkshopmediaset.s3.eu-west-1.amazonaws.com/Umano+poco+umano.jpg" alt="Umano, poco umano">
+                <div class="agenda-content">
+          <h3>Umano, poco umano. Esercizi spirituali contro l'intelligenza artificiale</h3>
+          <p><em>Mauro Crippa, Giuseppe Girgenti</em></p>
+          <p class="agenda-detail"><strong>Sinossi:</strong> richiama la saggezza del mondo classico come antidoto alla trasformazione antropologica avviata dall'IA, proponendo esercizi spirituali di resistenza culturale.<br><strong>Perché leggerlo:</strong> invita a riscoprire il valore umano e spirituale per conservare la nostra interiorità autonoma in un mondo dominato dall'IA.</p>
+        </div>
+        <a class="cart-link icon" href="https://www.mondadoristore.it/umano-poco-umano-esercizi-spirituali-contro-l-intelligenza-artificiale-libro-giuseppe-girgenti/p/9788856694178" target="_blank" aria-label="Acquista su Amazon"><i class="fas fa-cart-shopping"></i></a>
+      </section>
+    </section>
+
+    <section id="video" class="inner-tab-content">
+      <div class="video-grid">
+        <div class="video-box">
+          <iframe src="https://www.youtube.com/embed/KKNCiRWd_j0" title="Video 1" allowfullscreen></iframe>
+        </div>
+        <div class="video-box">
+          <iframe src="https://www.youtube.com/embed/jt3Ul3rPXaE" title="Video 2" allowfullscreen></iframe>
+        </div>
+        <div class="video-box">
+          <iframe src="https://www.youtube.com/embed/qyH3NxFz3Aw" title="Video 3" allowfullscreen></iframe>
+        </div>
+        <div class="video-box">
+          <iframe src="https://www.youtube.com/embed/CRraHg4Ks_g" title="Video 4" allowfullscreen></iframe>
+        </div>
+        <div class="video-box">
+          <iframe src="https://www.youtube.com/embed/id4YRO7G0wE?si=Fm_dPa8zk-botS-p" title="Video 4" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section id="podcast" class="inner-tab-content">
+      <p class="coming-soon">Torna presto per nuovi contenuti.</p>
+    </section>
+  </section>
 </main>
 
 <footer>
@@ -397,6 +556,16 @@
           icon.classList.add('fa-circle-plus');
         }
       }
+    });
+  });
+
+  document.querySelectorAll('#consigli .inner-tab').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var container = btn.closest('#consigli');
+      container.querySelectorAll('.inner-tab').forEach(function(b){ b.classList.remove('active'); });
+      container.querySelectorAll('.inner-tab-content').forEach(function(tc){ tc.classList.remove('active'); });
+      btn.classList.add('active');
+      container.querySelector('#'+btn.dataset.tab).classList.add('active');
     });
   });
 </script>
