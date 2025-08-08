@@ -167,7 +167,8 @@
       display: block;
     }
 
-    #libri .agenda-detail {
+    #libri .agenda-detail,
+    #podcast .agenda-detail {
       display: block;
     }
 
@@ -178,7 +179,7 @@
       color: var(--primary);
     }
 
-    .cart-link {
+    .cart-link, .play-link {
       color: var(--primary);
       text-decoration: none;
       margin-left: auto;
@@ -193,7 +194,7 @@
       border: 2px solid var(--primary);
     }
 
-    .book-cover {
+    .book-cover, .podcast-cover {
       width: 72px;
       height: auto;
       border-radius: 4px;
@@ -611,7 +612,57 @@ Narrativa avvincente: analogie chiare (es. speciazione digitale, AI come compagn
     </section>
 
     <section id="podcast" class="inner-tab-content">
-      <p class="coming-soon">Torna presto per nuovi contenuti.</p>
+      <p class="reading-intro">5 podcast da ascoltare fino in fondo</p>
+
+      <section class="agenda-item">
+        <img class="podcast-cover" src="https://aiworkshopmediaset.s3.eu-west-1.amazonaws.com/sole24.png" alt="Lex Fridman Podcast">
+        <div class="agenda-content">
+          <h3>2024 - Speciale Intelligenza Artificiale</h3>
+          <p><em>Enrico Pagliarini</em></p>
+          <p class="agenda-detail"><strong>Sinossi:</strong> Serie di 8 puntate monografiche: storia dell’AI, generativa, impatti sul lavoro, rischi e governance, con voci di ricercatori e manager italiani. Ogni episodio include esempi concreti e spunti normativi UE.<br><strong>Perché ascoltarlo:</strong> Ideale per chi desidera una panoramica completa in italiano, dal contesto regolatorio alle applicazioni business utili a broadcaster e gruppi media.</p>
+        </div>
+        <a class="play-link icon" href="https://www.radio24.ilsole24ore.com/podcast-originali/2024-speciale-intelligenza-artificiale" target="_blank" aria-label="Ascolta"><i class="fas fa-play"></i></a>
+      </section>
+
+      <section class="agenda-item">
+        <img class="podcast-cover" src="https://aiworkshopmediaset.s3.eu-west-1.amazonaws.com/nvidia.webp" alt="Hard Fork">
+        <div class="agenda-content">
+          <h3>NVIDIA’s Bartley Richardson on Why “Agentic AI Is Next-Level Automation”</h3>
+          <p><em>NVIDIA AI Podcast</em></p>
+          <p class="agenda-detail"><strong>Sinossi:</strong> Richardson illustra il passaggio dall’automazione classica ai “team” di agenti AI, spiegando come orchestrare più agenti in azienda con il nuovo toolkit NVIDIA Agent Intelligence e quali metriche usare per misurare il ROI.<br><strong>Perché ascoltarlo:</strong> Offre esempi concreti di automazione avanzata in produzione: utile a valutare se – e dove – introdurre agenti AI nei workflow di redazione, MAM o playout.</p>
+        </div>
+        <a class="play-link icon" href="https://podcasts.apple.com/gb/podcast/nvidias-bartley-richardson-on-why-agentic-ai-is-next/id1186480811?i=1000710303959" target="_blank" aria-label="Ascolta"><i class="fas fa-play"></i></a>
+      </section>
+
+      <section class="agenda-item">
+        <img class="podcast-cover" src="https://aiworkshopmediaset.s3.eu-west-1.amazonaws.com/whereitsall.webp" alt="Eye on AI">
+        <div class="agenda-content">
+          <h3>Where's It All Going? The Good, Bad & Ugly of AI's Future</h3>
+          <p><em>Broadcast Media: The Inside Track</em></p>
+          <p class="agenda-detail"><strong>Sinossi:</strong> Episodio “milestone” che analizza scenari 2030: dall’impatto su 400 M di posti di lavoro ai primi anchor virtuali, con dati McKinsey, Meta e casi broadcast reali.<br><strong>Perché ascoltarlo:</strong> Offre spunti per valutare minacce (skill at-risk) e opportunità (contenuti automatizzati, scheduling AI-driven) per costruire piani di reskilling.</p>
+        </div>
+        <a class="play-link icon" href="https://podcasts.apple.com/us/podcast/wheres-it-all-going-the-good-bad-ugly-of-ais-future/id1541224220?i=1000720681396" target="_blank" aria-label="Ascolta"><i class="fas fa-play"></i></a>
+      </section>
+
+      <section class="agenda-item">
+        <img class="podcast-cover" src="https://aiworkshopmediaset.s3.eu-west-1.amazonaws.com/The+AI+Gold+Rush.webp" alt="In Machines We Trust">
+        <div class="agenda-content">
+          <h3>The AI Gold Rush – Where Are the Biggest Opportunities?</h3>
+          <p><em>Broadcast Media: The Inside Track</em></p>
+          <p class="agenda-detail"><strong>Sinossi:</strong> Mappa i verticali più redditizi (sanità, property management, broadcast) e presenta il framework “Pain-Point-to-Profit” per valutare nuovi servizi AI.<br><strong>Perché ascoltarlo:</strong> Spinge a ragionare su modelli di business data-driven (voice agents, agentic workflows, consulenza AI) e su come differenziarsi nella corsa agli investimenti.</p>
+        </div>
+        <a class="play-link icon" href="https://podcasts.apple.com/us/podcast/the-ai-gold-rush-where-are-the-biggest-opportunities/id1541224220?i=1000719597227" target="_blank" aria-label="Ascolta"><i class="fas fa-play"></i></a>
+      </section>
+
+      <section class="agenda-item">
+        <img class="podcast-cover" src="https://aiworkshopmediaset.s3.eu-west-1.amazonaws.com/nontemetemacredete.webp" alt="The Gradient Podcast">
+        <div class="agenda-content">
+          <h3>Non temete, ma credete</h3>
+          <p><em>AI confini della conoscenza </em></p>
+          <p class="agenda-detail"><strong>Sinossi:</strong> Con il prof. Norberto Didier si esplora come il marketing possa evolvere in sinergia con l’AI, passando da sostituzione a “sostegno” del ruolo umano e aprendo nuove metriche di valore.<br><strong>Perché ascoltarlo:</strong> Utile per ripensare il rapporto uomo-macchina nelle funzioni marketing/commerciali e impostare strategie data-augmented senza perdere il fattore umano.</p>
+        </div>
+        <a class="play-link icon" href="https://podcasts.apple.com/mx/podcast/non-temete-ma-credete/id1809533560?i=1000708921797" target="_blank" aria-label="Ascolta"><i class="fas fa-play"></i></a>
+      </section>
     </section>
   </section>
 </main>
